@@ -1,12 +1,14 @@
 let xCars = [600, 600, 600];
 let yCars = [40, 96, 150];
 let carVelocities = [2.5, 3, 3.7];
+let carLength = 50;
+let carHeight = 40;
 
 function showsCar()
 {
     for (let i = 0; i < carImages.length; i++)
     {
-        image(carImages[i], xCars[i], yCars[i], 50, 40);
+        image(carImages[i], xCars[i], yCars[i], carLength, carHeight);
     }
 }
 

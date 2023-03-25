@@ -1,6 +1,7 @@
 //ator
 let xActor = 100;
 let yActor = 366;
+let collision = false;
 
 function showsActor()
 {
@@ -18,4 +19,21 @@ function movesActor()
   {
     yActor += 3; 
   }
+}
+
+function checkCollision()
+{
+  for (let i = 0; i < carImages.length; i++)
+  {
+    collision = collideRectCircle(xCars[i], yCars[i], carLength, carLength, xActor, yActor, 30);
+    if (collision)
+    {
+      collide();
+    }
+  }
+}
+
+function collide()
+{
+  yActor = 366;
 }
