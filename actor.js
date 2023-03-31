@@ -1,7 +1,8 @@
 //ator
-let xActor = 100;
+let xActor = 85;
 let yActor = 366;
 let collision = false;
+let myPoints = 0;
 
 function showsActor()
 {
@@ -25,15 +26,39 @@ function checkCollision()
 {
   for (let i = 0; i < carImages.length; i++)
   {
-    collision = collideRectCircle(xCars[i], yCars[i], carLength, carLength, xActor, yActor, 30);
+    collision = collideRectCircle(xCars[i], yCars[i], carLength, carLength, xActor, yActor, 10);
     if (collision)
     {
-      collide();
+      returnToInitialPosition();
     }
   }
 }
 
-function collide()
+function returnToInitialPosition()
 {
   yActor = 366;
 }
+
+function addPoints()
+{
+  textSize(25);
+  textAlign(CENTER);
+  fill(color(165, 81, 182))
+  // text function requires 3 essential parameters: what we want to display, x and y coordinates for its position.
+  text(myPoints, width / 5, 27);
+}
+
+function scorePoint()
+{
+  if (yActor < 15)
+  {
+    myPoints += 1;
+    returnToInitialPosition();
+  }
+    
+  
+}
+
+
+
+

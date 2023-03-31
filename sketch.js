@@ -12,4 +12,6 @@ function draw()
   movesActor();
   resetCarPositionToInitial();
   checkCollision();
+  addPoints();
+  scorePoint();
 }
